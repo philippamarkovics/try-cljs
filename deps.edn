@@ -1,0 +1,13 @@
+{:paths ["src"]
+ :deps {io.github.nextjournal/clerk {:git/sha "97f269e2e7a051575767dcc5efde2452f592bc1b"}
+        thheller/shadow-cljs {:mvn/version "2.26.2"}
+        reagent/reagent {:mvn/version "1.2.0"}
+        re-frame/re-frame {:mvn/version "1.4.2"}
+        applied-science/js-interop {:mvn/version "0.4.2"}}
+ :aliases {:dev {:extra-paths ["dev"]
+                 :extra-deps {io.github.nextjournal/clerk.render {:git/url "https://github.com/nextjournal/clerk"
+                                                                  :git/sha "01d8ecce5d5d6c4a6ce94b0e0138c4b79bd219ff"
+                                                                  :deps/root "render"}}}
+           :nextjournal/clerk {:exec-fn nextjournal.clerk/build!
+                               :exec-args {:paths ["README.md" "src/**/*.cljc"]}}
+           :shadow-cljs {:main-opts ["-m" "shadow.cljs.devtools.cli"]}}}

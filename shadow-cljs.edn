@@ -1,0 +1,17 @@
+{:deps
+ {:aliases [:dev]}
+
+ :dev-http {7890 "resources/public"}
+
+ :builds
+ {:dev
+  {:target :browser
+   :output-dir "resources/public/out"
+   :asset-path "/out"
+   :modules {:main {:entries [try-cljs]}}
+   :js-options {:resolve
+                {"react" {:export-globals ["React"]}
+                 "react-dom" {:export-globals ["ReactDOM"]}}}
+   :devtools {:repl-pprint true
+              :watch-dir "resources/public"
+              :use-document-host false}}}}
