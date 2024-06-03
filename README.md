@@ -1,4 +1,6 @@
-# Get started
+# CLJS UI Library playground
+
+## Get started
 
 * Run `npm install`
 * Run `npm run dev`
